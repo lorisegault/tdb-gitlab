@@ -1,4 +1,60 @@
-body {
-  font-family: system-ui, sans-serif;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: system-ui, sans-serif; background: #111827; color: #f3f4f6; min-height: 100vh; }
+.hidden { display: none !important; }
+
+.nav {
+  display: flex; align-items: center; gap: 2rem;
+  padding: 1rem 2rem; background: #1f2937; border-bottom: 1px solid #374151;
 }
-.hidden { display: none; }
+.nav-title { font-size: 1.25rem; font-weight: 700; }
+.nav-links { display: flex; gap: 0.5rem; }
+.nav-btn {
+  padding: 0.5rem 1rem; border: none; border-radius: 6px;
+  background: transparent; color: #9ca3af; cursor: pointer; font-size: 0.875rem;
+}
+.nav-btn:hover { background: #374151; color: #fff; }
+.nav-btn.active { background: #3b82f6; color: #fff; }
+
+#content { padding: 2rem; max-width: 960px; margin: 0 auto; }
+.section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+
+.card {
+  background: #1f2937; border: 1px solid #374151; border-radius: 8px;
+  padding: 1.5rem; margin-bottom: 1.5rem;
+}
+.card p { margin-bottom: 0.5rem; color: #d1d5db; }
+.card strong { color: #f3f4f6; }
+
+.stats-row { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.stat-card {
+  flex: 1; background: #1f2937; border: 1px solid #374151; border-radius: 8px;
+  padding: 1.5rem; text-align: center; font-size: 0.875rem; color: #9ca3af;
+}
+.stat-value { display: block; font-size: 2rem; font-weight: 700; color: #3b82f6; margin-top: 0.25rem; }
+
+.btn {
+  padding: 0.5rem 1.25rem; background: #3b82f6; color: #fff;
+  border: none; border-radius: 6px; cursor: pointer; font-size: 0.875rem;
+}
+.btn:hover { background: #2563eb; }
+
+.table {
+  width: 100%; border-collapse: collapse; margin-top: 1rem;
+  background: #1f2937; border-radius: 8px; overflow: hidden;
+}
+.table th, .table td {
+  padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid #374151;
+}
+.table th { background: #374151; color: #9ca3af; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+
+.badge {
+  display: inline-block; padding: 0.2rem 0.6rem; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 600;
+}
+.badge-success, .badge-passed { background: #065f46; color: #6ee7b7; }
+.badge-failed { background: #7f1d1d; color: #fca5a5; }
+.badge-running, .badge-pending { background: #78350f; color: #fcd34d; }
+.badge-canceled { background: #374151; color: #9ca3af; }
+
+.loading { color: #9ca3af; padding: 2rem; text-align: center; }
+.error { color: #fca5a5; padding: 2rem; text-align: center; }
