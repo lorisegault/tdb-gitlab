@@ -6,6 +6,8 @@ services:
     ports:
       - "8000:8000"
     env_file: .env
+    volumes:
+      - tdb_data:/app/data
 
   frontend:
     build:
@@ -15,3 +17,6 @@ services:
       - "80:80"
     depends_on:
       - backend
+
+volumes:
+  tdb_data:
