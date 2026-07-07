@@ -30,3 +30,9 @@ class GitLabClient:
 
     async def get_pipelines(self, project_id: int) -> list:
         return await self._get(f"/api/v4/projects/{project_id}/pipelines")
+
+    async def get_variables(self, project_id: int) -> list:
+        return await self._get(f"/api/v4/projects/{project_id}/variables")
+
+    async def get_branches(self, project_id: int) -> list:
+        return await self._get(f"/api/v4/projects/{project_id}/repository/branches")
