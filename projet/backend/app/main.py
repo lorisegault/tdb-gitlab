@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base, engine
-from app.routers import branches, issues, merge_requests, pipeline, secrets
+from app.routers import branches, issues, merge_requests, pipeline, repository, secrets
 
 
 @asynccontextmanager
@@ -28,6 +28,7 @@ app.include_router(secrets.router)
 app.include_router(branches.router)
 app.include_router(issues.router)
 app.include_router(merge_requests.router)
+app.include_router(repository.router)
 
 
 @app.get("/health")
